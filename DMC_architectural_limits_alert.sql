@@ -1,3 +1,5 @@
+declare global temporary table SESSION.stuff(col1 varchar(2), col2 varchar(500)) on commit preserve rows;
+declare global temporary table SESSION.admintabinfo as (select * from sysibmadm.admintabinfo) with no data on commit preserve rows;
 create or replace variable alert_percentage integer constant ( 1 ) ;
 
 insert into SESSION.admintabinfo select * from sysibmadm.admintabinfo;
